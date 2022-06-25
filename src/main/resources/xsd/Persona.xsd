@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Persona" xmlns:tns="http://www.example.org/Persona" elementFormDefault="qualified">
+
+    <element name="personaRequest" type="tns:personaRequest"></element>
+    
+    <complexType name="personaRequest">
+    	<sequence>
+    		<element name="action" type="string"></element>
+    		<element name="id" type="int" minOccurs="0"></element>
+    		<element name="nombre" type="string" minOccurs="0"></element>
+    		<element name="cel" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="personaResponse" type="tns:personaResponse"></element>
+    
+    <complexType name="personaResponse">
+    	<sequence>
+    		<element name="personaDetails" type="tns:personaDetails" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="personaDetails">
+    	<sequence>
+    		<element name="id" type="int"></element>
+    		<element name="nombre" type="string"></element>
+    		<element name="cel" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="personaFault" type="tns:personaFault"></element>
+    
+    <complexType name="personaFault">
+    	<sequence>
+    		<element name="errorCode" type="integer" minOccurs="0"></element>
+    		<element name="errorMessage" type="string" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>
